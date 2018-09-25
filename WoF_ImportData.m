@@ -76,9 +76,10 @@ filt.MgaTrials{i,1}(:,2) = filtfilt(b,a,filt.MgaTrials{i,1}(:,2));
 filt.thumbaccel{i,1}(3:end-2,2) = filtfilt(b,a,filt.thumbaccel{i,1}(3:end-2,2));
 filt.indexaccel{i,1}(3:end-2,2) = filtfilt(b,a,filt.indexaccel{i,1}(3:end-2,2));
 end
-
+%------------------------------------------------------------------------
 %Loops through each table to enter in MGA, mVelocity and time to each (%)
 % from each trial (row) 
+%------------------------------------------------------------------------
 nfiles = height(filt);
 sec_frame = 1/240; %seconds per frame
 for i = 1:nfiles
@@ -109,7 +110,6 @@ filt.thumb_mVeloc2end_pcnt(i) = 100 - filt.thumb_T2mVeloc_pcnt(i); %Peak to end 
 
 %For index 
 [filt.index_mVeloc(i), filt.index_mVelocFrame(i)] = max(filt.indexvelocity{i,1}(:,2)); %find mVelocity/frame
-
 %c and d corrospond to filling T2velocity trials
 cc = find(filt.indexvelocity{i,1}(:,2)== max(filt.indexvelocity{i,1}(:,2)));
 dd = length(filt.indexvelocity{i,1}(:,2));
@@ -123,7 +123,6 @@ filt.index_mVeloc2end_pcnt(i) = 100 - filt.index_T2mVeloc_pcnt(i); %Peak to end 
 %Thumb
 [filt.thumb_mAccel(i), filt.thumb_mAccelFrame(i)] = max(filt.thumbaccel{i,1}(:,2)); %find mAccel
 %e and f corrospond to filling T2velocity trials
-
 e = find(filt.thumbaccel{i,1}(:,2)== max(filt.thumbaccel{i,1}(:,2)));
 f = length(filt.thumbaccel{i,1}(:,2));
 filt.thumb_T2mAccel_pcnt(i) = e/f*100; %time to peak (%)
@@ -131,11 +130,9 @@ filt.thumb_T2mAccel_ms(i) = filt.thumb_mAccelFrame(i)*sec_frame*1000; %time to p
 filt.thumb_mAccel2end_ms(i) = filt.totaltime(i) - filt.thumb_T2mAccel_ms(i); %peak to end (ms)
 filt.thumb_mAccel2end_pcnt(i) = 100 - filt.thumb_T2mAccel_pcnt(i); %peak to end (%)
 
-
 %Index
 [filt.index_mAccel(i), filt.index_mAccelFrame(i)] = max(filt.indexaccel{i,1}(:,2)); %find mAccel
 %e and f corrospond to filling T2velocity trials
-
 ee = find(filt.indexaccel{i,1}(:,2)== max(filt.indexaccel{i,1}(:,2)));
 ff = length(filt.indexaccel{i,1}(:,2));
 filt.index_T2mAccel_pcnt(i) = ee/ff*100; %time to peak (%)
@@ -143,10 +140,12 @@ filt.index_T2mAccel_ms(i) = filt.index_mAccelFrame(i)*sec_frame*1000; %time to p
 filt.index_mAccel2end_ms(i) = filt.totaltime(i) - filt.index_T2mAccel_ms(i); %peak to end (ms)
 filt.index_mAccel2end_pcnt(i) = 100 - filt.index_T2mAccel_pcnt(i); %peak to end (%)
 end
+
 %Add trial type 
 for i = 1:height(filt)
 filt.trialtype{i} = 'Normal';
 end
+
 %remove unnecessary columns after calc 
 filt.thumb_mVelocFrame = [];
 filt.index_mVelocFrame = []; 
