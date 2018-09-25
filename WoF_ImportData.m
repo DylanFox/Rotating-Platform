@@ -6,7 +6,7 @@ function [unfilt,filt] = WoF_ImportData(~)
 %it is within the file path. 
 
 %------------IMPORT------------%
-unfilt = dir('GOPR*_*_normal.txt');  %change this to _normal or _fail depending and change category down the bottom
+unfilt = dir('GOPR*_*.txt'); 
 nfiles = length(unfilt); 
 
 %not sure how to preallocate this block
@@ -144,6 +144,7 @@ end
 %Add trial type 
 for i = 1:height(filt)
 filt.trialtype{i} = 'Normal';
+filt.Speed{i} = '20'; 
 end
 
 %remove unnecessary columns after calc 
