@@ -77,6 +77,8 @@ for i = 1:height(filt)
 filt.thumbvelocity{i,1}(2:end-1,2) = filtfilt(b,a,filt.thumbvelocity{i,1}(2:end-1,2));
 filt.indexvelocity{i,1}(2:end-1,2) = filtfilt(b,a,filt.indexvelocity{i,1}(2:end-1,2));
 filt.MgaTrials{i,1}(:,2) = filtfilt(b,a,filt.MgaTrials{i,1}(:,2));
+filt.thumbXYposn{i,:}(:,:) = filtfilt(b,a,filt.thumbXYposn{i,:}(:,:));
+filt.indexXYposn{i,:}(:,:) = filtfilt(b,a,filt.indexXYposn{i,:}(:,:));
 filt.thumbaccel{i,1}(3:end-2,2) = filtfilt(b,a,filt.thumbaccel{i,1}(3:end-2,2));
 filt.indexaccel{i,1}(3:end-2,2) = filtfilt(b,a,filt.indexaccel{i,1}(3:end-2,2));
 end
