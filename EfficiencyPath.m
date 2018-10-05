@@ -38,6 +38,6 @@ a(k,i) = pdist(unfilt_F1866.midpoint{i,1}([k:k+1],:),'euclidean');
 end
 end
 actual_dist = sum(a,1); 
-actual_dist = actual_dist' 
+actual_dist = actual_dist'; 
 
-ReachPathRatio = actual_dist./ideal_dist
+ReachPathRatio = actual_dist./ideal_dist;
