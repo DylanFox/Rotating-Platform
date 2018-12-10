@@ -1,10 +1,25 @@
 function x = ReachGraspImport(~)
 %Used to import multiple text files generated from Tracker Software
 %(v4.9.8) into a tabular format. Files are imported, stripped into their
-%individual components and then passed through a noise filter (butterworth)
-%This function uses the normalize_var function so make sure 
-%it is within the file path. 
+%individual components and then passed through a noise filter (2nd pass
+%butterworth)
 
+% Three txt files were generated from a single tracker video - X_thumbdata,
+% X_indexdata and Grip aperture. This code imports these and ensures each
+% video (or trial) is separated by rows while each parameter is sorted by
+% columns
+
+%This function uses the normalize_var function so make sure it is within
+%the file path.
+
+
+%Ensure files you are importing are in the current folder directory, these
+%were taken from a GOPRO camera which adds a prefix of 'GOPR' which this
+%accounts for. This can be changed to whatever file naming format you
+%choose.
+
+%KinematicTable = ReachGraspImport; 
+%This will produce a N x 
 %------------IMPORT------------%
 x = dir('GOPR*_*.txt');
 nfiles = length(x);
