@@ -1,4 +1,4 @@
-function x = ReachGraspImport(~)
+function x = ImportData(~)
 %Used to import multiple text files generated from Tracker Software
 %(v4.9.8) into a tabular format. Files are imported, stripped into their
 %individual components and then passed through a noise filter (2nd pass
