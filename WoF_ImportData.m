@@ -6,11 +6,9 @@ function [unfilt,filt] = WoF_ImportData(~)
 %it is within the file path. 
 
 %------------IMPORT------------%
-<<<<<<< HEAD
+
 unfilt = dir('GOPR*_*.txt');  %change this to _normal or _fail depending and change category down the bottom
-=======
-unfilt = dir('GOPR*_*.txt'); 
->>>>>>> devDF
+
 nfiles = length(unfilt); 
 
 %not sure how to preallocate this block
@@ -148,15 +146,13 @@ filt.index_mAccel2end_pcnt(i) = 100 - filt.index_T2mAccel_pcnt(i); %peak to end 
 end
 
 %Add trial type 
-for i = 1:height(filt)
-<<<<<<< HEAD
-filt.trialtype{i} = 'Fail';
-filt.animal{i} = 'M1778'; 
-=======
-filt.trialtype{i} = 'Normal';
-filt.Speed{i} = '20'; 
->>>>>>> devDF
-end
+%for i = 1:height(filt)
+%filt.trialtype{i} = 'Fail';
+%filt.animal{i} = 'M1778'; 
+%filt.trialtype{i} = 'Normal';
+%filt.Speed{i} = '20'; 
+
+%end
 
 %remove unnecessary columns after calc 
 filt.thumb_mVelocFrame = [];
@@ -165,3 +161,8 @@ filt.thumb_mAccelFrame = [];
 filt.index_mAccelFrame = [];
 filt.mMGAFrame = [];
 end 
+
+%Post Stuff - add if value 
+for i = 1:height(unfilt)
+unfilt.MgaTrials{i}(:,3) = [];  
+end
