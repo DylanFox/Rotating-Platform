@@ -1,4 +1,4 @@
-function [unfilt,filt] = WoF_ImportData(~)
+function [unfilt,filt,unfilt_raw] = WoF_ImportData(~)
 %Used to import multiple text files generated from Tracker Software
 %(v4.9.8) into a tabular format. Files are imported, stripped into their
 %individual components and then passed through a noise filter (butterworth)
@@ -7,15 +7,15 @@ function [unfilt,filt] = WoF_ImportData(~)
 
 %------------IMPORT------------%
 
-unfilt = dir('GOPR*_*.txt');  %change this to _normal or _fail depending and change category down the bottom
+unfilt_raw = dir('GOPR*_*.txt');  %change this to _normal or _fail depending and change category down the bottom
 
-nfiles = length(unfilt); 
+nfiles = length(unfilt_raw); 
 
 %not sure how to preallocate this block
 data = [];
 
 for k = 1:nfiles
-   data = [data; importdata(unfilt(k).name)];
+   data = [data; importdata(unfilt_raw(k).name)];
 end
 t = struct2table(data);
 
@@ -163,6 +163,6 @@ filt.mMGAFrame = [];
 end 
 
 %Post Stuff - add if value 
-for i = 1:height(unfilt)
-unfilt.MgaTrials{i}(:,3) = [];  
-end
+%for i = 1:height(unfilt)
+%unfilt.MgaTrials{i}(:,3) = [];  
+%end
