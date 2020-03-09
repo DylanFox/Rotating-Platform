@@ -11,17 +11,18 @@ histogram(bootstat_control_mga,30,'Normalization','probability','FaceColor',[0 0
 hold on 
 histogram(bootstat_PIm_mga,30,'Normalization','probability','FaceColor',[0.8500 0.3250 0.0980])
 histogram(bootstat_LGN_mga,30,'Normalization','probability','FaceColor',[0.4660 0.6740 0.1880])
-xline(bmu_control_mga,'k-',sprintf('%.2f',bmu_control_mga),'LineWidth',2,'FontSize',12)
-xline(CI_Control_MGA(1),'--',sprintf('%.2f',CI_Control_MGA(1)),'LineWidth',2,'FontSize',12,'color',[0 0.4470 0.7410])
-xline(CI_Control_MGA(2),'--',sprintf('%.2f',CI_Control_MGA(2)),'LineWidth',2,'FontSize',12,'color',[0 0.4470 0.7410])
+%  xline(bmu_control_mga,'k-',sprintf('%f',bmu_control_mga),'LineWidth',2,'FontSize',12,'LabelHorizontalAlignment','center')
+xline(bmu_control_mga,'k-','LineWidth',2)
+xline(CI_Control_MGA(1),'--','LineWidth',2,'color',[0 0.4470 0.7410])
+xline(CI_Control_MGA(2),'--','LineWidth',2,'color',[0 0.4470 0.7410])
 
-xline(bmu_PIm_mga,'k-',sprintf('%.2f',bmu_PIm_mga),'LineWidth',2,'FontSize',12)
-xline(CI_PIm_MGA(1),'--',sprintf('%.2f',CI_PIm_MGA(1)),'LineWidth',2,'FontSize',12,'color',[0.8500 0.3250 0.0980])
-xline(CI_PIm_MGA(2),'--',sprintf('%.2f',CI_PIm_MGA(2)),'LineWidth',2,'FontSize',12,'color',[0.8500 0.3250 0.0980])
+xline(bmu_PIm_mga,'k-','LineWidth',2)
+xline(CI_PIm_MGA(1),'--','LineWidth',2,'color',[0.8500 0.3250 0.0980])
+xline(CI_PIm_MGA(2),'--','LineWidth',2,'color',[0.8500 0.3250 0.0980])
 
-xline(bmu_LGN_mga,'k-',sprintf('%.2f',bmu_LGN_mga),'LineWidth',2,'FontSize',12)
-xline(CI_LGN_MGA(1),'--',sprintf('%.2f',CI_LGN_MGA(1)),'LineWidth',2,'FontSize',12,'color',[0.4660 0.6740 0.1880])
-xline(CI_LGN_MGA(2),'--',sprintf('%.2f',CI_LGN_MGA(2)),'LineWidth',2,'FontSize',12,'color',[0.4660 0.6740 0.1880])
+xline(bmu_LGN_mga,'k-','LineWidth',2)
+xline(CI_LGN_MGA(1),'--','LineWidth',2,'color',[0.4660 0.6740 0.1880])
+xline(CI_LGN_MGA(2),'--','LineWidth',2,'color',[0.4660 0.6740 0.1880])
 
 
 
@@ -39,17 +40,17 @@ histogram(bootstat_control_totaltime,30,'Normalization','probability','FaceColor
 hold on 
 histogram(bootstat_PIm_totaltime,30,'Normalization','probability','FaceColor',[0.8500 0.3250 0.0980])
 histogram(bootstat_LGN_totaltime,30,'Normalization','probability','FaceColor',[0.4660 0.6740 0.1880])
-xline(bmu_control_totaltime,'k-',sprintf('%.2f',bmu_control_totaltime),'LineWidth',2,'FontSize',12)
-xline(CI_Control_totaltime(1),'--',sprintf('%.2f',CI_Control_totaltime(1)),'LineWidth',2,'FontSize',12,'color',[0 0.4470 0.7410])
-xline(CI_Control_totaltime(2),'--',sprintf('%.2f',CI_Control_totaltime(2)),'LineWidth',2,'FontSize',12,'color',[0 0.4470 0.7410])
+xline(bmu_control_totaltime,'k-','LineWidth',2)
+xline(CI_Control_totaltime(1),'--','LineWidth',2,'color',[0 0.4470 0.7410])
+xline(CI_Control_totaltime(2),'--','LineWidth',2,'color',[0 0.4470 0.7410])
 
-xline(bmu_PIm_totaltime,'k-',sprintf('%.2f',bmu_PIm_totaltime),'LineWidth',2,'FontSize',12)
-xline(CI_PIm_totaltime(1),'--',sprintf('%.2f',CI_PIm_totaltime(1)),'LineWidth',2,'FontSize',12,'color',[0.8500 0.3250 0.0980])
-xline(CI_PIm_totaltime(2),'--',sprintf('%.2f',CI_PIm_totaltime(2)),'LineWidth',2,'FontSize',12,'color',[0.8500 0.3250 0.0980])
+xline(bmu_PIm_totaltime,'k-','LineWidth',2)
+xline(CI_PIm_totaltime(1),'--','LineWidth',2,'color',[0.8500 0.3250 0.0980])
+xline(CI_PIm_totaltime(2),'--','LineWidth',2,'color',[0.8500 0.3250 0.0980])
 
-xline(bmu_LGN_totaltime,'k-',sprintf('%.2f',bmu_LGN_totaltime),'LineWidth',2,'FontSize',12)
-xline(CI_LGN_totaltime(1),'--',sprintf('%.2f',CI_LGN_totaltime(1)),'LineWidth',2,'FontSize',12,'color',[0.4660 0.6740 0.1880])
-xline(CI_LGN_totaltime(2),'--',sprintf('%.2f',CI_LGN_totaltime(2)),'LineWidth',2,'FontSize',12,'color',[0.4660 0.6740 0.1880])
+xline(bmu_LGN_totaltime,'k-','LineWidth',2)
+xline(CI_LGN_totaltime(1),'--','LineWidth',2,'color',[0.4660 0.6740 0.1880])
+xline(CI_LGN_totaltime(2),'--','LineWidth',2,'color',[0.4660 0.6740 0.1880])
 
 
 %% Velocity 
@@ -67,17 +68,17 @@ histogram(bootstat_control_veloc,30,'Normalization','probability','FaceColor',[0
 hold on 
 histogram(bootstat_PIm_veloc,30,'Normalization','probability','FaceColor',[0.8500 0.3250 0.0980])
 histogram(bootstat_LGN_veloc,30,'Normalization','probability','FaceColor',[0.4660 0.6740 0.1880])
-xline(bmu_control_veloc,'k-',sprintf('%.2f',bmu_control_veloc),'LineWidth',2,'FontSize',12)
-xline(CI_Control_veloc(1),'--',sprintf('%.2f',CI_Control_veloc(1)),'LineWidth',2,'FontSize',12,'color',[0 0.4470 0.7410])
-xline(CI_Control_veloc(2),'--',sprintf('%.2f',CI_Control_veloc(2)),'LineWidth',2,'FontSize',12,'color',[0 0.4470 0.7410])
+xline(bmu_control_veloc,'k-','LineWidth',2)
+xline(CI_Control_veloc(1),'--','LineWidth',2,'color',[0 0.4470 0.7410])
+xline(CI_Control_veloc(2),'--','LineWidth',2,'color',[0 0.4470 0.7410])
 
-xline(bmu_PIm_veloc,'k-',sprintf('%.2f',bmu_PIm_veloc),'LineWidth',2,'FontSize',12)
-xline(CI_PIm_veloc(1),'--',sprintf('%.2f',CI_PIm_veloc(1)),'LineWidth',2,'FontSize',12,'color',[0.8500 0.3250 0.0980])
-xline(CI_PIm_veloc(2),'--',sprintf('%.2f',CI_PIm_veloc(2)),'LineWidth',2,'FontSize',12,'color',[0.8500 0.3250 0.0980])
+xline(bmu_PIm_veloc,'k-','LineWidth',2)
+xline(CI_PIm_veloc(1),'--','LineWidth',2,'color',[0.8500 0.3250 0.0980])
+xline(CI_PIm_veloc(2),'--','LineWidth',2,'color',[0.8500 0.3250 0.0980])
 
-xline(bmu_LGN_veloc,'k-',sprintf('%.2f',bmu_LGN_veloc),'LineWidth',2,'FontSize',12)
-xline(CI_LGN_veloc(1),'--',sprintf('%.2f',CI_LGN_veloc(1)),'LineWidth',2,'FontSize',12,'color',[0.4660 0.6740 0.1880])
-xline(CI_LGN_veloc(2),'--',sprintf('%.2f',CI_LGN_veloc(2)),'LineWidth',2,'FontSize',12,'color',[0.4660 0.6740 0.1880])
+xline(bmu_LGN_veloc,'k-','LineWidth',2)
+xline(CI_LGN_veloc(1),'--','LineWidth',2,'color',[0.4660 0.6740 0.1880])
+xline(CI_LGN_veloc(2),'--','LineWidth',2,'color',[0.4660 0.6740 0.1880])
 
 
 %% Acceleration 
@@ -95,14 +96,14 @@ histogram(bootstat_control_accel,30,'Normalization','probability','FaceColor',[0
 hold on 
 histogram(bootstat_PIm_accel,30,'Normalization','probability','FaceColor',[0.8500 0.3250 0.0980])
 histogram(bootstat_LGN_accel,30,'Normalization','probability','FaceColor',[0.4660 0.6740 0.1880])
-xline(bmu_control_accel,'k-',sprintf('%.2f',bmu_control_accel),'LineWidth',2,'FontSize',12)
-xline(CI_Control_accel(1),'--',sprintf('%.2f',CI_Control_accel(1)),'LineWidth',2,'FontSize',12,'color',[0 0.4470 0.7410])
-xline(CI_Control_accel(2),'--',sprintf('%.2f',CI_Control_accel(2)),'LineWidth',2,'FontSize',12,'color',[0 0.4470 0.7410])
+xline(bmu_control_accel,'k-','LineWidth',2)
+xline(CI_Control_accel(1),'--','LineWidth',2,'color',[0 0.4470 0.7410])
+xline(CI_Control_accel(2),'--','LineWidth',2,'color',[0 0.4470 0.7410])
 
-xline(bmu_PIm_accel,'k-',sprintf('%.2f',bmu_PIm_accel),'LineWidth',2,'FontSize',12)
-xline(CI_PIm_accel(1),'--',sprintf('%.2f',CI_PIm_accel(1)),'LineWidth',2,'FontSize',12,'color',[0.8500 0.3250 0.0980])
-xline(CI_PIm_accel(2),'--',sprintf('%.2f',CI_PIm_accel(2)),'LineWidth',2,'FontSize',12,'color',[0.8500 0.3250 0.0980])
+xline(bmu_PIm_accel,'k-','LineWidth',2)
+xline(CI_PIm_accel(1),'--','LineWidth',2,'color',[0.8500 0.3250 0.0980])
+xline(CI_PIm_accel(2),'--','LineWidth',2,'color',[0.8500 0.3250 0.0980])
 
-xline(bmu_LGN_accel,'k-',sprintf('%.2f',bmu_LGN_accel),'LineWidth',2,'FontSize',12)
-xline(CI_LGN_accel(1),'--',sprintf('%.2f',CI_LGN_accel(1)),'LineWidth',2,'FontSize',12,'color',[0.4660 0.6740 0.1880])
-xline(CI_LGN_accel(2),'--',sprintf('%.2f',CI_LGN_accel(2)),'LineWidth',2,'FontSize',12,'color',[0.4660 0.6740 0.1880])
+xline(bmu_LGN_accel,'k-','LineWidth',2,'LabelHorizontalAlignment','center')
+xline(CI_LGN_accel(1),'--','LineWidth',2,'color',[0.4660 0.6740 0.1880])
+xline(CI_LGN_accel(2),'--','LineWidth',2,'color',[0.4660 0.6740 0.1880])
